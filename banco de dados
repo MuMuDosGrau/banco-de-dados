@@ -1,0 +1,36 @@
+create database senai;
+
+use senai;
+
+create table aluno(
+    nome varchar(100) not null,
+    nascimento date not null,
+    emai varchar(100) not null,
+    cpf char(14) not null,
+    primary key (id)
+);
+
+select* from aluno;
+describe aluno;
+
+create database biblioteca;
+
+use biblioteca;
+
+create table cliente(
+	id int auto_increment,
+	nome varchar(100) not null,
+    nascimento date,
+    salario decimal(8,2),
+    primary key (id)
+);
+
+select* from cliente;
+insert into cliente (nome, nascimento , salario)
+values('Adilson' , '2000-09-06' , '1200.50');
+
+alter table aluno
+add column rg varchar(15) not null unique;
+
+insert into aluno(nome, nascimento, emai, cpf , rg)
+values('lulu santos' , '1969-09-06' , 'luluzinho@gmail.com' , '069.696.696-69' , '487834'); 
